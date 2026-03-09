@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quotify Pro // Wisdom API</title>
+  <link rel="stylesheet" href="quotify.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <div class="brand">QUOTIFY</div>
+      <nav>
+        <div class="nav-item active" id="dashboard">Dashboard</div>
+        <div class="nav-item" id="history">History</div>
+        <div class="nav-item" id="favorites">Favorites</div>
+        
+      </nav>
+      <div class="promo-card1">
+          <a href="https://wa.me/233502867853?text=Hello%20Khofi,%20I'm%20interested%20in%20learning%20API%20Integration%20after%20using%20Quotify!" 
+            class="promo-link" 
+            target="_blank">
+            Learn API Integration
+          </a>
+        </div>
+    </aside>
+
+    <main class="app-main">
+      <header>
+        <h1>Wisdom Engine <span class="badge">v2.0</span></h1>
+      </header>
+
+      <div id="view-dashboard" class="content-view">
+          <section class="display-area">
+        <div class="quote-card">
+          <div class="quote-icon">“</div>
+          <p id="quote-text">Click the button to fetch wisdom from the cloud.</p>
+          <div class="quote-footer">
+             <span id="quote-author">— Developer </span>
+            <i class="fa-regular fa-heart favorite-icon" id="fav-icon"></i>
+          </div>
+          
+
+          <div class="control-group">
+            <button id="new-quote-btn">Generate Wisdom</button>
+            <!-- <p id="status"></p> -->
+          </div>
+        </div>
+      </section>
+
+      <div class="promo-card">
+          <a href="https://wa.me/233502867853?text=Hello%20Khofi,%20I'm%20interested%20in%20learning%20API%20Integration%20after%20using%20Quotify!" 
+            class="promo-link" 
+            target="_blank">
+            Learn API Integration
+          </a>
+          <!-- <button class="btn-sm">Upgrade</button> -->
+      </div>
+
+      <section class="stats-grid">
+        <div class="stat-box"><h4>Daily Limit</h4><p id="daily-limit">5 Remaining</p></div>
+        <div class="stat-box"><h4>API Status</h4><p class="online" id="api-status">Connected</p></div>
+      </section>
+      </div>
+
+      <div id="view-history" class="content-view" style="display: none;">
+        <h2>History</h2>
+        <div id="history-list"></div>
+      </div>
+    
+      <div id="view-favorites" class="content-view" style="display: none;">
+        <h2>Favorites</h2>
+        <div id="favorites-list"></div>
+      </div>
+
+    </main>
+  </div>
+
+
+  <div id="limit-modal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-icon">🚀</div>
+    <h2>Daily Wisdom Limit Reached</h2>
+    <p>You've hit your free limit for today! To unlock unlimited quotes and learn how to build this exact system, chat with me on WhatsApp.</p>
+    <div class="modal-actions">
+      <a href="https://wa.me/233502867853?text=I've%20hit%20the%20limit%20on%20Quotify!%20Teach%20me%20API%20Integration." class="btn-primary" target="_blank">Chat with Khofi</a>
+      <button id="close-modal" class="btn-secondary">Maybe Later</button>
+    </div>
+  </div>
+</div>
+
+  <script src="quotify.js"></script>
+</body>
+</html>
+
+
+<!-- <div class="promo-card">
+  <p>Learn API Integration</p>
+  <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi!%20I'm%20interested%20in%20learning%20API%20integration%20from%20your%20Quotify%20project." 
+     target="_blank" 
+     class="btn-sm-link">
+     Chat on WhatsApp
+  </a>
+</div> -->
