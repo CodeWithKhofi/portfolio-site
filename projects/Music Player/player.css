@@ -232,3 +232,29 @@ body {
     font-size: 13px;
     color: var(--subtext);
 }
+
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .player-wrapper {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .left-side, .playlist {
+        flex: 1;
+        width: 100%;
+    }
+
+    .toggle-btn {
+        position: relative; 
+        top: 0;
+        right: 0;
+        margin-bottom: 20px;
+    }
+}

@@ -192,3 +192,22 @@ tr:hover {
     background: var(--danger);
     color: white;
 }
+
+
+
+@media (max-width: 600px) {
+    .input-section {
+        grid-template-columns: 1fr; 
+        gap: 12px;
+    }
+
+    .data-display {
+        overflow-x: auto; 
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
