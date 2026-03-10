@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S. Command Center</title>
+    <link rel="stylesheet" href="jarvis.css">
+</head>
+<body>
+
+    <div class="interface-container">
+        
+        <header>
+            <div class="status">SYSTEM: <span id="system-status">OFFLINE</span></div>
+            <div class="status">TIME: <span id="time-display">--:--</span></div>
+        </header>
+
+        <div class="core-container">
+            <div class="arc-reactor">
+                <div class="inner-circle"></div>
+            </div>
+            <p class="listening-text">AWAITING INPUT...</p>
+        </div>
+
+        <div class="message-log">
+            <p id="response-text">"Welcome, User. I am ready."</p>
+        </div>
+
+        <div class="commands">
+            <p>TRY SAYING:</p>
+            <div class="tags">
+                <span class="tag">"Light Mode"</span>
+                <span class="tag">"Open Google"</span>
+                <span class="tag">"What time is it?"</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="jarvis.js"></script>
+</body>
+</html>

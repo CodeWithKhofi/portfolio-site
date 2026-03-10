@@ -1,0 +1,151 @@
+/* 1. GLOBAL VARIABLES & RESET */
+:root {
+    --bg-color: #050505;       /* Almost Black */
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --neon-cyan: #00f3ff;      /* The main glow color */
+    --text-color: #ffffff;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents scrollbars */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 2. MAIN GLASS INTERFACE */
+.interface-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    background: var(--glass-bg);
+    border: 1px solid rgba(0, 243, 255, 0.2); /* Subtle border */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.1); /* Ambient Glow */
+    backdrop-filter: blur(10px); /* The "Glass" effect */
+}
+
+/* 3. HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    font-size: 0.8rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+}
+
+/* 4. THE ARC REACTOR (ANIMATED) */
+.core-container {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arc-reactor {
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px var(--neon-cyan);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.inner-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--neon-cyan);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.listening-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    animation: blink 1.5s infinite;
+}
+
+/* 5. MESSAGE LOG */
+.message-log {
+    margin-top: 30px;
+    min-height: 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+/* 6. COMMAND TAGS */
+.commands {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+
+.commands p {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    border: 1px solid var(--neon-cyan);
+    border-radius: 50px;
+    color: var(--neon-cyan);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: var(--neon-cyan);
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* 7. ANIMATIONS */
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px var(--neon-cyan); transform: scale(1); }
+    50% { box-shadow: 0 0 40px var(--neon-cyan), inset 0 0 40px var(--neon-cyan); transform: scale(1.05); }
+    100% { box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px var(--neon-cyan); transform: scale(1); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* 8. ACTIVE CLASSES (For JavaScript to Toggle) */
+body.light-mode {
+    --bg-color: #ffffff;
+    --neon-cyan: #000000;
+    --text-color: #000000;
+    --glass-bg: rgba(200, 200, 200, 0.4);
+}

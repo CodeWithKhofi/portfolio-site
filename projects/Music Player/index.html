@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="player.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pc6Xb...(trimmed)" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    
+
+    <div class="player-wrapper">
+
+        <!-- Left section: Album + song info -->
+        <div class="left-side">
+            <!-- Theme toggle button -->
+            <button id="themeToggle" class="toggle-btn">
+                <span class="icon"></span>
+            </button>
+            <img src="cover.jpg" alt="Album Cover" class="cover-img">
+
+            <h2 class="song-title">Nebula Dreams</h2>
+            <p class="artist-name">Artist Name</p>
+
+            <!-- progress + times -->
+            <div class="progress-area">
+                <span class="current-time">0:00</span>
+                <input type="range" id="progressBar" min="0" max="100" value="0">
+                <span class="total-time">0:00</span>
+            </div>
+
+            <!-- player controls -->
+            <div class="controls">
+                <button class="ctrl-btn" id="prevBtn">⏮</button>
+                <button class="ctrl-btn" id="playBtn"><i class="fa-solid fa-play"></i></button>
+                <button class="ctrl-btn" id="nextBtn">⏭</button>
+            </div>
+        </div>
+
+        <!-- Right side: Playlist -->
+        <div class="playlist">
+            <h3>Playlist</h3>
+
+            <ul class="play-list-container">
+                
+                <!-- items would be loaded dynamically with js -->
+
+            </ul>
+
+        </div>
+
+    </div>
+
+<script src="player.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #4facfe;
+    --accent-color: #00f2fe;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    /* height: 100vh; */
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.app-container {
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+
+
+.search-box {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.9rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  border: none;
+  color: white;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 0.7rem 1rem;
+  border: none;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 10px 10px 0;
+}
+
+.weather-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.temp-box h1 {
+    font-size: 6rem;
+    margin: 0;
+    background: linear-gradient(to bottom, #fff, #ddd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.details-side {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+    .weather-wrapper {
+        grid-template-columns: 1fr; /* Stack main card and details */
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    /* Shrink that massive 6rem font so it doesn't break the screen */
+    .temp-box h1 {
+        font-size: 4rem;
+    }
+
+    /* Make the search box easier to tap */
+    .search-box {
+        margin-top: 10px;
+    }
+}
+
+/* 3. Extra polish for very small phones */
+@media (max-width: 480px) {
+    .temp-box h1 {
+        font-size: 3.5rem;
+    }
+    
+    .detail-item {
+        flex-direction: column; /* Stack "Feels Like" above the value */
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+}

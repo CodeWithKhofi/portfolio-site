@@ -1,0 +1,234 @@
+/* color variables for light mode */
+:root {
+    --bg: #f6f6f8;
+    --card: #ffffff;
+    --text: #222;
+    --subtext: #777;
+    --accent: #4cc6d9;
+    --shadow: rgba(0,0,0,0.08);
+    --time-color: #fff;
+}
+
+/* dark mode overrides */
+.dark {
+    --bg: #0e0f12;
+    --card: #1b1c20;
+    --text: #f4f4f4;
+    --subtext: #bdbdbd;
+    --accent: #63ff99;
+    --shadow: rgba(0,0,0,0.4);
+}
+
+/* general reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+}
+
+
+/* Toggle container*/
+.toggle-btn {
+  width: 70px;
+  height: 34px;
+  background: var(--card);
+  border-radius: 50px;
+  border: var(--text);
+  box-shadow: 0 3px 12px var(--shadow);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: background 0.4s;
+  padding: 0;
+}
+
+/* The moving circle */
+.toggle-btn .icon {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 8px rgba(255, 200, 0, 0.7); /* glow */
+}
+
+/* Sun icon (day) */
+.toggle-btn .icon::before {
+  content: "☀";
+  transition: 0.3s;
+}
+
+/*DARK MODE STYLES*/
+
+/* background becomes dark */
+.toggle-btn.night {
+  background: #1f2530;
+}
+
+/* slider moves right */
+.toggle-btn.night .icon {
+  left: 38px;
+  box-shadow: 0 0 8px rgba(130, 180, 255, 0.8); /* moon glow */
+}
+
+/* moon icon */
+.toggle-btn.night .icon::before {
+  content: "🌙";
+}
+
+/* main container */
+.player-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+    max-width: 900px;
+    margin: auto;
+}
+
+/* left side */
+.left-side {
+    flex: 1.2;
+}
+
+/* .cover-img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+} */
+.cover-img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  aspect-ratio: 1 / 1; /* Always a perfect square */
+  object-fit: cover;   /* Zoom/crop to fill square */
+}
+.song-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.artist-name {
+    color: var(--subtext);
+    margin-bottom: 25px;
+}
+
+/* progress bar section */
+.progress-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0 30px;
+}
+.current-time, .total-time{
+    color: var(--text);
+}
+
+#progressBar {
+    flex: 1;
+    appearance: none;
+    height: 5px;
+    background: var(--subtext);
+    border-radius: 5px;
+}
+
+#progressBar::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--accent);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* controls */
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.ctrl-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    background: var(--card);
+    box-shadow: 0 3px 10px var(--shadow);
+    color: var(--text);
+}
+
+/* playlist section */
+.playlist {
+    flex: 0.9;
+}
+
+.playlist h3 {
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.playlist ul {
+    list-style: none;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.track:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.track.active {
+    background: var(--accent);
+}
+
+.track img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.t-title {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.t-artist {
+    font-size: 13px;
+    color: var(--subtext);
+}
